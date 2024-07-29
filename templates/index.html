@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+
+<style>
+    body {
+	background: grey;
+	color: pink;
+	padding:1%
+}
+
+h1 {
+    text-align: center;
+}
+
+.button {
+    width: 150px;
+    font-size: 18pt;
+    text-align: center;
+    padding: 10px;
+    background-color: pink;
+    color: #3B3232;
+    text-decoration: none;
+    padding: 0px 5px 0px 5px;
+    border-top: 1px solid pink;
+    border-bottom: 1px solid pink;
+    border-left: 1px solid pink;
+    border-right: 1px solid pink;
+}
+
+table {
+    margin-left:auto;
+    margin-right:auto;
+    text-align: center;
+    background-color: pink;
+}
+
+.column {
+    float: left;
+}
+
+.left {
+    width: 60%;
+}
+
+.right {
+    width: 40%;
+    display: inline-block;
+}
+
+.row {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer {
+    position: absolute;
+    bottom:0;
+    width: 90%;
+    text-align: center;
+}
+
+</style>
+
+<html>
+<head>
+    <title>Rover Cam</title>
+</head>
+
+<body>
+<h1>Rover Cam Stream</h1>
+<div class="row">
+    <div class="column left">
+    <h2 style="text-align:center">Video Stream</h2>
+    </div>
+    <div class="column right">
+    <h2 style="text-align:center">Rover Controls</h2>
+    </div>
+</div>
+<div class="row">
+    <div class="column left">
+    <h3 style="text-align:center"><img src="{{ url_for('video_feed') }}" width="70%"></h3>
+    </div>
+
+    <div class="column right">
+    <h3 style="text-align:center">Camera</h3>
+    <table>
+        <tr>
+            <td><a href="/" class="button">Picture</a></td>
+            <td style="border:1px solid black"><a href="/tilt/min" class="button">Tilt Up</a></td>
+            <td><a href="/" class="button">Video</td>
+        </tr>
+        <tr>
+            <td style="border:1px solid black"><a href="/pan/max" class="button">Pan Left</a></td>
+            <td style="border:1px solid black"><a href="/pan/mid" class="button">Reset</a></td>
+            <td style="border:1px solid black"><a href="/pan/min" class="button">Pan Right</a></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td style="border:1px solid black"><a href="/tilt/max" class="button">Tilt Down</a></td>
+            <td></td>
+        </tr>
+    </table>
+    <hr>
+    <h3 style="text-align:center">Motor</h3>
+    <table>
+        <tr>
+            <td><a href="/" class="button">Slow Down</td>
+            <td style="border:1px solid black"><a href="/rover/forward" class="button">Forward</a></td>
+            <td><a href="/" class="button">Speed Up</td>
+        </tr>
+        <tr>
+            <td style="border:1px solid black"><a href="/rover/left" class="button">Left</a></td>
+            <td style="border:1px solid black"><a href="/rover/stop" class="button">Stop</a></td>
+            <td style="border:1px solid black"><a href="/rover/right" class="button">Right</a></td>
+        </tr>
+        <tr>
+            <td><a href="/rover/backLeft" class="button">Back Left</a></td>
+            <td style="border:1px solid black"><a href="/rover/backward" class="button">Reverse</a></td>
+            <td><a href="/rover/backRight" class="button">Back Right</a></td>
+        </tr>
+    </table>
+    </div>
+</div>
+</body>
+<div class="footer">
+    By Mochi~
+</div>
+</html>
